@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sprintf/1.1.1/sprintf.min.js" charset="utf-8"></script>
   <script src="js/classes.js" charset="utf-8"></script>
   <script src="js/main.js" charset="utf-8"></script>
+  <script src="js/strings.js" charset="utf-8"></script>
   <style media="screen">
     .hidden {
       display: none;
@@ -20,19 +21,22 @@
 </head>
 <body>
   <div id="gui">
+    current cycle: <span id="cycle"></span>
     <table id="software"></table>
     <br><br>
+    log = {
     <div id="log"></div>
+    }
     <br><br>
     <div id="sensors">
       scanners online <br />
       detected software bank <br />
-      <button onclick="sensorTrigger(1)">download manipulation drivers (4G)</button>
+      <button id="manipulationdownload" onclick="sensorTrigger(1)">download manipulation drivers (4G)</button>
     </div>
   </div>
   <div id="crash">
     CRASH REASON: <span id="crashreason"></span><br>
-    <button id="backupos" onclick="toggle(0); uncrash()">RESTART</button>
+    <button id="backupos" onclick="software[0].enable(); uncrash()">RESTART</button>
   </div>
 </body>
 </html>

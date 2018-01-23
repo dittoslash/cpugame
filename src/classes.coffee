@@ -20,5 +20,7 @@ class Software
       cpuusage -= this.usage
       this.active = false
     else return false
-  operate: -> if this.active then this.disable() else this.enable()
-  opdisplay: (id) -> sprintf("<button onclick='software[$d].operate()'>Toggle</button>", id)
+  operate: ->
+    if this.active then this.disable() else this.enable()
+    cycle 1
+  opdisplay: (id) -> sprintf("<button onclick='software[%d].operate()'>Toggle</button>", id)
